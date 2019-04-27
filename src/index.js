@@ -38,11 +38,14 @@ class Board extends React.Component {
             xIsNext: true,
         }
     }
-    
+
     handleClick(i) {
         const squares = this.state.squares.slice();
         squares[i] = 'X';
-        this.setState({squares: squares})
+        this.setState({
+            squares: squares,
+            xIsNext: !this.state.xIsNext,
+        })
     }
 
     renderSquare(i) {
